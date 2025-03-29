@@ -10,7 +10,7 @@
   "dependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-router-dom": "^6.11.1"  // Это важная строка! Убедись, что она добавлена.
+    "react-router-dom": "^6.11.1"
   },
   "devDependencies": {
     "vite": "^4.0.0",
