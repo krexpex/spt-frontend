@@ -1,5 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Дополнительные стили для твоего приложения */
+
 body {
-  font-family: sans-serif;
-  background: #fff;
-  margin: 0;
+    @apply bg-gray-100 text-gray-900 font-sans;
+}
+
+h1, h2, h3 {
+    @apply font-bold text-gray-800;
+}
+
+button {
+    @apply bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition;
+}
+
+p {
+    @apply text-gray-700;
 }
