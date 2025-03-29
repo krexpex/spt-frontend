@@ -1,35 +1,30 @@
-import { useEffect, useState } from 'react'
-import ProductList from './components/ProductList'
+import React from 'react';
+import './index.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Catalog from './components/Catalog';
+import Profile from './components/Profile';
+import Cart from './components/Cart';
+import History from './components/History';
 
 function App() {
-  const [user, setUser] = useState(null)
-
-  useEffect(() => {
-    const tg = window.Telegram.WebApp
-
-    if (tg) {
-      tg.ready()
-      tg.expand()
-
-      // Проверка безопасности:
-      const safeUser = tg.initDataUnsafe?.user
-      if (safeUser) {
-        setUser(safeUser)
-      }
-    }
-  }, [])
-
   return (
-    <div style={{ padding: 20 }}>
-      <h1 style={{ color: '#222' }}>
-        Привет {user?.first_name || 'гость'} 👋
-      </h1>
-      <p style={{ color: '#555' }}>
-        Добро пожаловать в $SPT WebApp — зарабатывай токены, обменивай на реальные товары!
-      </p>
-      <ProductList />
-    </div>
-  )
+    <Router>
+      <div className="min-h-screen bg-gray-100">
+        <Navbar />
+        <div className="p-4">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/catalog" element={<Catalog />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/history" element={<History />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;
