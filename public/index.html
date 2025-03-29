@@ -9,6 +9,13 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Инициализация Telegram Web App
+      const tg = window.Telegram.WebApp;
+      tg.expand(); // Расширить WebApp на весь экран
+      tg.MainButton.setText("Начать");
+      tg.MainButton.show();
+      console.log("Telegram WebApp работает.");
+    </script>
   </body>
 </html>
