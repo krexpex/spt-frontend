@@ -1,21 +1,19 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
+  base: '/', // Убедись, что базовый URL указан правильно
   build: {
     outDir: 'dist',
     rollupOptions: {
-      input: 'index.html'
+      input: path.resolve(__dirname, 'index.html')
     }
-  },
-  server: {
-    port: 3000,
-    open: true
   },
   resolve: {
     alias: {
-      '@': '/src'
+      '@': path.resolve(__dirname, './src')
     }
   }
 });
