@@ -10,14 +10,15 @@ function Catalog({ addToCart }) {
     return (
         <div>
             <h1>📦 Каталог товаров</h1>
-            <ul>
+            <div className="product-list">
                 {products.map(product => (
-                    <li key={product.id}>
-                        {product.name} - {product.price} $SPT
-                        <button onClick={() => addToCart(product)}>Добавить в корзину</button>
-                    </li>
+                    <div className="product-card" key={product.id}>
+                        <h2>{product.name}</h2>
+                        <p>Цена: {product.price} $SPT</p>
+                        <button onClick={() => addToCart(product)}>Добавить</button>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }

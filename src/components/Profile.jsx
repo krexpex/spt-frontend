@@ -4,8 +4,12 @@ function Profile() {
     return (
         <div>
             <h1>👤 Профиль</h1>
-            <p>Имя пользователя: TestUser</p>
-            <p>Баланс: 1000 $SPT</p>
+            <div className="profile-info">
+                <p>Имя пользователя: TestUser</p>
+                <p>Баланс: 1000 $SPT</p>
+                <button>Пополнить баланс</button>
+                <button>Настройки</button>
+            </div>
         </div>
     );
 }
