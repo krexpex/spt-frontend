@@ -3,15 +3,14 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <nav className="bg-blue-600 text-white p-4 shadow-lg flex justify-between">
-      <div className="font-bold text-xl">SPT WebApp</div>
-      <div className="space-x-4">
-        <Link to="/">Главная</Link>
-        <Link to="/catalog">Каталог</Link>
-        <Link to="/profile">Профиль</Link>
-        <Link to="/cart">Корзина</Link>
-        <Link to="/history">История</Link>
-      </div>
+    <nav className="bg-gray-800 p-4 text-white">
+      <ul className="flex space-x-4">
+        <li><Link to="/">Главная</Link></li>
+        <li><Link to="/catalog">Каталог</Link></li>
+        <li><Link to="/profile">Профиль</Link></li>
+        <li><Link to="/cart">Корзина</Link></li>
+        <li><Link to="/history">История</Link></li>
+      </ul>
     </nav>
   );
 };
