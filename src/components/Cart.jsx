@@ -1,5 +1,12 @@
 import React from 'react';
 
-const Cart = () => <div><h1>Cart Page</h1></div>;
+function Cart() {
+    return (
+        <div>
+            <h1>🛒 Корзина</h1>
+            <p>Ваши выбранные товары.</p>
+        </div>
+    );
+}
 
 export default Cart;

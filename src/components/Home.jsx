@@ -1,5 +1,12 @@
 import React from 'react';
 
-const Home = () => <div><h1>Home Page</h1></div>;
+function Home() {
+    return (
+        <div>
+            <h1>🏠 Главная страница</h1>
+            <p>Добро пожаловать в SPT WebApp!</p>
+        </div>
+    );
+}
 
 export default Home;

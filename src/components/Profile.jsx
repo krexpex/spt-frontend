@@ -1,5 +1,12 @@
 import React from 'react';
 
-const Profile = () => <div><h1>Profile Page</h1></div>;
+function Profile() {
+    return (
+        <div>
+            <h1>👤 Профиль</h1>
+            <p>Тут будет информация о пользователе.</p>
+        </div>
+    );
+}
 
 export default Profile;
