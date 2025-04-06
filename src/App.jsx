@@ -14,7 +14,9 @@ function App() {
         if (window.Telegram?.WebApp) {
             const tg = window.Telegram.WebApp;
             tg.ready();
-            tg.expand();
+            tg.expand();  // Разворачиваем приложение на весь экран
+            tg.MainButton.hide();  // Скрываем основную кнопку Telegram
+            tg.BackButton.hide();  // Скрываем кнопку назад (если нужно)
         }
     }, []);
 
