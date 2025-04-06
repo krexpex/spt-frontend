@@ -4,16 +4,9 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/', // Убедись, что базовый URL указан правильно
   build: {
-    outDir: 'dist',
     rollupOptions: {
-      input: path.resolve(__dirname, 'index.html')
-    }
-  },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src')
+      input: path.resolve(__dirname, 'index.html') // Убедись, что это путь к index.html в корневой папке
     }
   }
 });
