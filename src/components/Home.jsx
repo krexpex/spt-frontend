@@ -1,12 +1,14 @@
+// src/components/Home.jsx
+
 import React from 'react';
 
-function Home() {
+const Home = () => {
     return (
-        <div>
-            <h1>🏠 Главная страница</h1>
-            <p>Добро пожаловать в $SPT WebApp!</p>
+        <div className="p-4">
+            <h1 className="text-3xl font-bold mb-4">Добро пожаловать в SPT WebApp!</h1>
+            <p>Здесь будет отображаться главная страница вашего приложения.</p>
         </div>
     );
-}
+};
 
 export default Home;

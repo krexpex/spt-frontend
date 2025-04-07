@@ -1,58 +1,31 @@
-import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import './App.css';
+// src/App.jsx
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import NewsFeed from './components/NewsFeed';
 import Home from './components/Home';
 import Profile from './components/Profile';
 import Catalog from './components/Catalog';
 import Cart from './components/Cart';
-import Notifications from './components/Notifications';
+import History from './components/History';
 
-function App() {
-    const [cart, setCart] = useState([]);
-
-    useEffect(() => {
-        if (window.Telegram?.WebApp) {
-            const tg = window.Telegram.WebApp;
-            tg.ready();
-            tg.expand();  // Разворачиваем приложение на весь экран
-            tg.MainButton.hide();  // Скрываем основную кнопку Telegram
-            tg.BackButton.hide();  // Скрываем кнопку назад (если нужно)
-        }
-    }, []);
-
-    const addToCart = (item) => {
-        setCart([...cart, item]);
-    };
-
-    const clearCart = () => {
-        setCart([]);
-    };
-
-    return (
-        <Router>
-            <div className="app">
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/profile" element={<Profile />} />
-                    <Route path="/catalog" element={<Catalog addToCart={addToCart} />} />
-                    <Route path="/cart" element={<Cart cart={cart} clearCart={clearCart} />} />
-                    <Route path="/notifications" element={<Notifications />} />
-                </Routes>
-
-                {/* Нижняя панель навигации */}
-                <div className="bottom-nav">
-                    <Link to="/">🏠</Link>
-                    <Link to="/profile">👤</Link>
-                    <Link to="/catalog">📦</Link>
-                    <Link to="/cart">🛒</Link>
-                    <Link to="/notifications">🔔</Link>
-                </div>
-
-                {/* Плавающая кнопка действий */}
-                <button className="floating-button">➕</button>
-            </div>
-        </Router>
-    );
-}
+const App = () => {
+  return (
+    <Router>
+      <div className="min-h-screen bg-gray-100">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/news" element={<NewsFeed />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/catalog" element={<Catalog />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/history" element={<History />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+};
 
 export default App;
