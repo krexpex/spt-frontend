@@ -2,47 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Общий стиль страницы */
-body, html, #root {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
-
 body {
-  @apply bg-gray-50 font-sans;
+  @apply bg-gray-50 font-sans text-gray-900;
 }
 
-/* Контейнер всего контента */
+#root {
+  @apply h-screen flex flex-col;
+}
+
 .app {
-  height: 100%;
-  padding-bottom: 64px; /* место под нижнюю навигацию */
-  position: relative;
+  @apply flex-1 pb-16;
 }
 
-/* Нижняя навигационная панель */
-.navbar-bottom {
-  @apply fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-md flex justify-around items-center h-16 z-40;
+/* Нижняя панель навигации */
+.bottom-nav {
+  @apply fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex justify-around items-center h-16 shadow-md;
+  z-index: 50;
 }
 
-/* Эмодзи-иконки навигации */
-.navbar-icon {
-  @apply text-2xl text-gray-500 transition-transform hover:scale-125 relative;
+.bottom-nav a {
+  @apply text-xl transition-transform hover:scale-110;
 }
 
-/* Активная ссылка */
-.navbar-icon-active {
-  @apply text-blue-500;
-}
-
-/* Счётчик корзины */
-.cart-badge {
-  @apply absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-1.5;
-}
-
-/* Профиль в правом верхнем углу */
+/* Иконка профиля */
 .profile-icon {
-  @apply absolute top-2 right-4 text-3xl z-50;
+  @apply absolute top-2 right-4 text-2xl;
+}
+
+/* Корзина с badge */
+.cart-container {
+  @apply relative;
+}
+
+.cart-badge {
+  @apply absolute -top-1 -right-2 bg-red-500 text-white text-xs rounded-full px-1.5 py-0.5;
 }
