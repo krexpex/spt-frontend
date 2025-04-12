@@ -2,27 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, #root {
+/* Общий стиль страницы */
+body, html, #root {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-  font-family: 'Inter', sans-serif;
-  background-color: #f8fafc;
+  overflow: hidden;
 }
 
-.bottom-nav {
-  @apply fixed bottom-0 left-0 right-0 h-16 bg-white shadow-md flex justify-around items-center z-50;
+body {
+  @apply bg-gray-50 font-sans;
 }
 
-.bottom-nav a {
-  @apply flex flex-col items-center text-gray-500 hover:text-blue-500 transition duration-200 text-sm;
+/* Контейнер всего контента */
+.app {
+  height: 100%;
+  padding-bottom: 64px; /* место под нижнюю навигацию */
+  position: relative;
 }
 
-.bottom-nav a.active {
-  @apply text-blue-600;
+/* Нижняя навигационная панель */
+.navbar-bottom {
+  @apply fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-md flex justify-around items-center h-16 z-40;
 }
 
-.floating-button {
-  @apply fixed bottom-24 right-4 w-14 h-14 rounded-full bg-green-500 text-white text-2xl flex items-center justify-center shadow-lg hover:bg-green-600 transition duration-300;
+/* Эмодзи-иконки навигации */
+.navbar-icon {
+  @apply text-2xl text-gray-500 transition-transform hover:scale-125 relative;
+}
+
+/* Активная ссылка */
+.navbar-icon-active {
+  @apply text-blue-500;
+}
+
+/* Счётчик корзины */
+.cart-badge {
+  @apply absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-1.5;
+}
+
+/* Профиль в правом верхнем углу */
+.profile-icon {
+  @apply absolute top-2 right-4 text-3xl z-50;
 }
